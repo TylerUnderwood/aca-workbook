@@ -53,9 +53,13 @@ function isLegal( startStack, endStack ) {
 }
 
 function checkForWin() {
-	console.log(stacks.c)
-	console.log(stacks.c === [ 4, 3, 2, 1 ] )
-	if ( stacks.c === [ 4, 3, 2, 1 ] ) {
+
+	let acctual = JSON.stringify(stacks.c)
+	let expected = JSON.stringify([ 4, 3, 2, 1 ])
+
+
+
+	if ( stacks.c[3] === 1 ) {
 		return true
 	} else {
 		return false
