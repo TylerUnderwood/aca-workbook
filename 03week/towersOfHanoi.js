@@ -26,10 +26,8 @@ function printStacks() {
 }
 
 function movePiece( startStack, endStack ) {
-	// grab the top piece from the start stack
-	// place that piece on the end stack 
+	// push and pop from one stack to the other
 	stacks[endStack].push( stacks[startStack].pop() )
-	
 }
 
 function isLegal( startStack, endStack ) {
@@ -39,8 +37,8 @@ function isLegal( startStack, endStack ) {
 	if ( validMove.includes(startStack) && validMove.includes(endStack) ) {
 		console.log('valid move')
 
-		let topOfStartStack =  stacks[startStack][stacks[startStack].length - 1]
-		let topOfEndStack =  stacks[endStack][stacks[endStack].length - 1]
+		let topOfStartStack = stacks[startStack][stacks[startStack].length - 1]
+		let topOfEndStack = stacks[endStack][stacks[endStack].length - 1]
 
 		if ( ( topOfStartStack < topOfEndStack ) || ( topOfEndStack === undefined ) ) {
 			console.log('legal move')
@@ -54,12 +52,16 @@ function isLegal( startStack, endStack ) {
 
 function checkForWin() {
 
-	let acctual = JSON.stringify(stacks.c)
-	let expected = JSON.stringify([ 4, 3, 2, 1 ])
+	// let acctual = JSON.stringify(stacks.c)
+	// let expected = JSON.stringify([ 4, 3, 2, 1 ])
 
+	// if ( acctual === expected ) {
+	// 	return true
+	// } else {
+	// 	return false
+	// }
 
-
-	if ( stacks.c[3] === 1 ) {
+	if ( stacks.c.length === 4 ) {
 		return true
 	} else {
 		return false
