@@ -42,16 +42,21 @@ function validInput(guessArray) {
 	return true;
 }
 
-function generateHint(guessArray, solutionArray) {
+function generateHint(guess) {
 
 	let redPeg = 0;
 	let whitePeg = 0;
 
+	let guessArray = guess.split('');
+	let solutionArray = solution.split('');
+
 	for ( let i = 0; i < guessArray.length; i++ ) {
+
 		if ( guessArray[i] === solutionArray[i] ) {
 			redPeg++
 		} else
-		if ( solutionArray.includes( guessArray[i] ) ) {
+
+		if ( solutionArray.indexOf( guessArray[i] ) ) {
 			whitePeg++
 		}
 	}
@@ -63,7 +68,6 @@ function mastermind(guess) {
 
 	console.log( "Solution: " + solution + "\n" + "Guess: " + guess )
 
-	const solutionArray = solution.split('');
 	const guessArray = guess.split('');
 
 	if ( guessArray.length === 4 ) {
@@ -75,7 +79,7 @@ function mastermind(guess) {
 
 		} else if ( validInput(guessArray) ) {
 
-			board.unshift(guess + ": " + generateHint(guessArray, solutionArray))
+			board.unshift(guess + ": " + generateHint(guess))
 
 		} else {
 			console.log('You must enter a letter between "a" and "h".');
@@ -116,10 +120,10 @@ if (typeof describe === 'function') {
 
 	describe('#generateHint()', () => {
 		it('should generate hints', () => {
-			assert.equal(generateHint(['a', 'b', 'd', 'c'], solution.split('')), '2-2');
+			assert.equal(generateHint('abdc'), '2-2');
 		});
 		it('should generate hints if solution has duplicates', () => {
-			assert.equal(generateHint(['a', 'a', 'b', 'b'], solution.split('')), '1-1');
+			assert.equal(generateHint('aabb'), '1-1');
 		});
 	});
 
