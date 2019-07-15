@@ -21,6 +21,7 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
+// Fixed the random solution generator
 function generateSolution() {
 	for ( let i = 0; solution.split('').length < 4; i++ ) {
 		const randomIndex = getRandomInt(0, letters.length);
@@ -33,6 +34,7 @@ function generateSolution() {
 
 function validInput(guessArray) {
 
+	// make sure we are only inputing possible guesses
 	for ( let i = 0; i < guessArray.length; i++ ) {
 		if ( !letters.includes( guessArray[i] ) ) {
 			return false;
@@ -44,29 +46,39 @@ function validInput(guessArray) {
 
 function generateHint(guess) {
 
-	let redPeg = 0;
-	let whitePeg = 0;
+	let redPeg = 0; // correct letter locations
+	let whitePeg = 0; // correct letter
 
 	let guessArray = guess.split('');
 	let solutionArray = solution.split('');
 
-	for ( let i = 0; i < guessArray.length; i++ ) {
+	// Loop through the array to find all correct letter locations
+	for ( let i = 0; i < solutionArray.length; i++ ) {
 
 		if ( guessArray[i] === solutionArray[i] ) {
-			redPeg++
-		} else
-
-		if ( solutionArray.indexOf( guessArray[i] ) ) {
-			whitePeg++
+			redPeg++;
+			// remove the guess that has already been tested
+			solutionArray[i] = null;
 		}
 	}
 
-	return redPeg + "-" + whitePeg	
+	// Loop through the updated array to find all correct letters
+	// without adding more than one white peg for multiple correct letters
+	for ( let i = 0; i < solutionArray.length; i++ ) {
+
+		let targetIndex = solutionArray.indexOf( guessArray[i] );
+
+		if( targetIndex > -1 ){
+			whitePeg++;
+			// remove all guesses that match the current guess
+			solutionArray[targetIndex] = null;
+		}
+	}
+
+	return redPeg + "-" + whitePeg
 }
 
 function mastermind(guess) {
-
-	console.log( "Solution: " + solution + "\n" + "Guess: " + guess )
 
 	const guessArray = guess.split('');
 
