@@ -292,6 +292,107 @@ textarea,
 .m-b-0 { margin-bottom: 0; }
 .m-l-0 { margin-left: 0; }
 
-
+pre {
+	margin: 0;
+	border: 1px solid #aaa;
+	background-color: #f6f6f6;
+	padding: 1em 2em 1em 1em;
+	overflow: scroll;
+}
 
 /* ===== Specific ===== */
+
+.hidden {
+	display: none !important;
+}
+
+.list-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+ul.tri-columns {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+ul.tri-columns li {
+	display: block;
+	width: 100%;
+}
+
+@media screen and ( max-width: 767px ) {
+	ul.tri-columns li {
+		font-size: 0.7rem;
+	}
+
+	ul.tri-columns li:nth-child(n+2) {
+		padding-top: 4%;
+	}
+}
+
+@media screen and ( min-width: 768px ) and ( max-width: 1079px ) {
+	ul.tri-columns li {
+		width: 50%;
+		font-size: 0.6rem;
+		padding: 0 2%;
+	}
+	
+	ul.tri-columns li:nth-child(n+3) {
+		padding-top: 4%;
+	}
+	
+	ul.tri-columns li:nth-child(2n+1) {
+		padding-left: 0; 
+	}
+	
+	ul.tri-columns li:nth-child(2n) {
+		padding-right: 0; 
+	}
+}
+
+@media screen and ( min-width: 1080px ) {
+	ul.tri-columns li {
+		width: 33.333333%;
+		font-size: 0.5rem;
+		padding: 0 2%;
+	}
+	
+	ul.tri-columns li:nth-child(n+4) {
+		padding-top: 4%;
+	}
+	
+	ul.tri-columns li:nth-child(3n+1) {
+		padding-left: 0; 
+	}
+	
+	ul.tri-columns li:nth-child(3n) {
+		padding-right: 0; 
+	}
+}
+
+.team-buttons {
+	display: flex;
+	margin-top: 2%;
+}
+
+.team-buttons button {
+	font-size: inherit;
+	width: 48%;
+}
+.team-buttons button:nth-child(1) {
+	margin-right: 2%;
+}
+.team-buttons button:nth-child(2) {
+	margin-left: 2%;
+}
+.team-buttons .btn-red-team {
+	background-color: red;
+	border-color: red;
+}
+
+.team-buttons .btn-blue-team {
+	background-color: blue;
+	border-color: blue;
+}
+

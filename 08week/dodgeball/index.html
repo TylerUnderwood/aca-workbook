@@ -12,26 +12,39 @@
 	<body>
 
 		<section class="wrap row gutter">
-			<div>
+			<div class="list-header">
 				<h4>List Of People</h4>
-				<ul id="people"></ul>
+				<button class="show-hide" onclick="showHide( 'people' )"></button>
 			</div>
-			<button onclick="listPeopleChoices()">List People</button>
-			<div>
-				<h4>Dodge Ball Players</h4>
-				<ul id="players"></ul>
-			</div>
-			<div>
-				<h4>Blue Team</h4>
-				<ul id="blue"></ul>
-			</div>
-			<div>
-				<h4>Red Team</h4>
-				<ul id="red"></ul>
-			</div>
+			<ul class="m-t tri-columns" id="people"></ul>
 		</section>
 
-		<script type="text/babel" src="./script.js"></script>
+		<!-- <section class="wrap row gutter">
+			<div class="list-header">
+				<h4>Dodge Ball Players</h4>
+				<button class="show-hide" onclick="showHide(players)"></button>
+			</div>
+			<button onclick="listPeopleChoices()">List People</button>
+			<ul class="m-t" id="players"></ul>
+		</section> -->
+
+		<section class="wrap row gutter">
+			<div class="list-header">
+				<h4>Red Team</h4>
+				<button class="show-hide" onclick="showHide( 'redTeam' )"></button>
+			</div>
+			<ul class="m-t tri-columns" id="redTeam"></ul>
+		</section>
+
+		<section class="wrap row gutter">
+			<div class="list-header">
+				<h4>Blue Team</h4>
+				<button class="show-hide" onclick="showHide( 'blueTeam' )"></button>
+			</div>
+			<ul class="m-t tri-columns" id="blueTeam"></ul>
+		</section>
+
+		<script src="./script.js"></script>
 	</body>
 
 </html>
