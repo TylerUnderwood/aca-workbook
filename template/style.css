@@ -141,6 +141,14 @@ address {
 	font-style: normal;
 }
 
+pre {
+	margin: 0;
+	border: 1px solid #aaa;
+	background-color: #f6f6f6;
+	padding: 1em 2em 1em 1em;
+	overflow: scroll;
+}
+
 
 
 /* ===== BUTTON ===== */
@@ -151,9 +159,9 @@ button,
 	border: 2px solid orangered;
 	border-radius: 0.1rem;
 	background-color: orangered;
-	padding: 0 1.6em;
+	padding: 0.6em 1.6em;
 	letter-spacing: 2px;
-	line-height: 2em;
+	line-height: 1;
 	font-size: 0.9rem;
 	font-weight: bold;
 	color: white;
@@ -291,6 +299,9 @@ textarea,
 .m-r-0 { margin-right: 0; }
 .m-b-0 { margin-bottom: 0; }
 .m-l-0 { margin-left: 0; }
+
+.auto-left { margin-left: auto; }
+.auto-right { margin-right: auto; }
 
 
 
