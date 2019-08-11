@@ -1,197 +1,111 @@
 'use strict'
 
-document.querySelectorAll('.show-hide').forEach( function( elem ) 
+let arrOfPlayers;
+
+// funciton to update the players
+let updatePlayers = () =>
 {
-	elem.innerHTML = "Hide";
-})
+	let players = '';
 
-let showHide = ( elemID ) => {
-
-	let elem = document.getElementById( elemID );
-
-	if ( elem.classList.contains( 'hidden' ) )
+	arrOfPlayers.forEach( function( obj, index )
 	{
-		event.target.innerHTML = "Hide";
-		elem.classList.remove( 'hidden' );
-		elem.classList.add( 'shown' );
-	}
-	else
-	{
-		event.target.innerHTML = "Show";
-		elem.classList.remove( 'shown' );
-		elem.classList.add( 'hidden' );
-	}
-}
-
-const arrOfPeople = [
-	{
-		id: 1,
-		name: "Tyler Underwood",
-		age: 999,
-		skillSet: "everthing",
-		placeBorn: "Outer Space"
-	},
-	{
-		id: 2,
-		name: "Charles Young",
-		age: 55,
-		skillSet: "welding",
-		placeBorn: "Omaha, Nebraska"
-	},
-	{
-		id: 3,
-		name: "Judy Twilight",
-		age: 35,
-		skillSet: "fishing",
-		placeBorn: "Louisville, Kentucky"
-	},
-	{
-		id: 4,
-		name: "Cynthia Doolittle",
-		age: 20,
-		skillSet: "tic tac toe",
-		placeBorn: "Pawnee, Texas"
-	},
-	{
-		id: 5,
-		name: "John Willouby",
-		age: 28,
-		skillSet: "pipe fitting",
-		placeBorn: "New York, New York"
-	},
-	{
-		id: 6,
-		name: "Stan Honest",
-		age: 20,
-		skillSet: "boom-a-rang throwing",
-		placeBorn: "Perth, Australia"
-	},
-	{
-		id: 7,
-		name: "Mia Watu",
-		age: 17,
-		skillSet: "acrobatics",
-		placeBorn: "Los Angeles, California"
-	},
-	{
-		id: 8,
-		name: "Walter Cole",
-		age: 32,
-		skillSet: "jump rope",
-		placeBorn: "New Orleans, Louisiana"
-	},
-]
-
-let updatePeople = () =>
-{
-	let people = '';
-
-	arrOfPeople.forEach( function( obj, index )
-	{
-		people += `
+		players += `
 			<li>
 				<pre>${JSON.stringify( obj, null, 4 )}</pre>
 				<div class="team-buttons">
-					<button class="btn-red-team" onclick="joinRed( ${index} )">Red Team</button>
-					<button class="btn-blue-team" onclick="joinBlue( ${index} )">Blue Team</button>
+					<button class="btn-red-team" onclick="redTeam.joinTeam( ${index} )">Red Team</button>
+					<button class="btn-blue-team" onclick="blueTeam.joinTeam( ${index} )">Blue Team</button>
 				</div>
 			</li>
 		`;
 	})
 
-	document.getElementById('people').innerHTML = people;
+	document.getElementById( 'dodgeballPlayers' ).innerHTML = players;
 }
-updatePeople();
 
-let updateRedTeam = () =>
+// button to get players from an outside array
+let getPlayers = ( peopleArr ) =>
 {
-	let teamMembers = '';
-
-	redTeam.forEach( function( obj )
+	if ( peopleArr.length != 0 )
 	{
-		teamMembers += `
-			<li>
-				<pre>${JSON.stringify( obj, null, 4 )}</pre>
-			</li>
-		`;
-	})
-
-	document.getElementById('redTeam').innerHTML = teamMembers;
-}
-
-let joinRed = ( index ) =>
-{
-	redTeam.push( arrOfPeople.splice( index, 1 ) );
-	updatePeople();
-	updateRedTeam();
-}
-
-let updateBlueTeam = () =>
-{
-	let teamMembers = '';
-
-	blueTeam.forEach( function( obj )
-	{
-		teamMembers += `
-			<li>
-				<pre>${JSON.stringify( obj, null, 4 )}</pre>
-			</li>
-		`;
-	})
-
-	document.getElementById('blueTeam').innerHTML = teamMembers;
-}
-
-let joinBlue = ( index ) =>
-{
-	blueTeam.push( arrOfPeople.splice( index, 1 ) );
-	updatePeople();
-	updateBlueTeam();
-}
-
-
-  
-const listOfPlayers = []
-const blueTeam = []
-const redTeam = []
-
-class player
-{
-	constructor()
-	{
-
+		arrOfPlayers = peopleArr.splice( 0, peopleArr.length );
+		updatePlayers();
 	}
 }
-class blueTeam1
-{
-	constructor()
-	{
 
+class DodgeballTeam
+{
+	constructor( teamID, teamName )
+	{
+		this.teamID = teamID;
+		this.teamName = teamName;
+		this.teamMembers = [];
+	}
+
+	updateTeam()
+	{
+		let members = '';
+
+		this.teamMembers.forEach( function( obj, index  )
+		{
+			members += `
+				<li class="team-member">
+					<pre>${JSON.stringify( obj, null, 4 )}</pre>
+					<button class="remove-button" onclick="${obj.dodgeballTeamID}.removePlayer( ${index} )">&times;</button>
+				</li>
+			`;
+		})
+
+		document.getElementById( this.teamID.toString() ).innerHTML = members;
+	}
+
+	updateDOM()
+	{
+		updatePlayers();
+		this.updateTeam();
+	}
+
+	joinTeam( index )
+	{
+		// add the team info to the player obj
+		arrOfPlayers[ index ].dodgeballTeamID = this.teamID;
+		// grab and remove the player that is being added
+		let newPlayer = arrOfPlayers.splice( index, 1 );
+		// add the player to the team
+		this.teamMembers.push( newPlayer[0] );
+		// update the DOM
+		this.updateDOM();
+	}
+
+	removePlayer( index )
+	{
+		// remove the team info from the player obj
+		delete this.teamMembers[ index ].dodgeballTeamID;
+		// grab and hold the player that is being removed
+		let removedPlayer = this.teamMembers.splice( index, 1 );
+		// add the player to the back to the unasigned players
+		arrOfPlayers.push( removedPlayer[0] );
+		// update the DOM
+		this.updateDOM();
 	}
 }
-class redTeam1
-{
-	constructor()
-	{
 
+// declare our teams
+const redTeam = new DodgeballTeam( 'redTeam', 'Red Robins' );
+const blueTeam = new DodgeballTeam( 'blueTeam', 'Blue Jays' );
+
+// set the team names in the DOM
+document.getElementById( 'redTeamName' ).innerHTML = redTeam.teamName;
+document.getElementById( 'blueTeamName' ).innerHTML = blueTeam.teamName;
+
+// a button to change the names
+let changeTeamName = ( team ) =>
+{
+	let newName = prompt("Please enter your team name", "New Name");
+
+	if ( newName != null )
+	{
+		team.teamName = newName;
+		document.getElementById( `${team.teamID}Name` ).innerHTML = team.teamName;
 	}
 }
-  
-// const listPeopleChoices = () => {
-
-// 	const listElement = document.getElementById('players')
-
-// 	arrOfPeople.map(person => {
-// 		const li = document.createElement("li")
-// 		const button = document.createElement("button")
-// 		button.innerHTML = "Make Player"
-// 		button.addEventListener('click', function() {makePlayer(person.id)} )
-// 		li.appendChild(button)
-// 		li.appendChild(document.createTextNode(person.name + " - " + person.skillSet))
-// 		listElement.append(li)
-// 	})
-// }
-  
-// const makePlayer = (id) => {
-// 	console.log(`li ${id} was clicked!`)
-// }

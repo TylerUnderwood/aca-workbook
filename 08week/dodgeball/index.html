@@ -13,37 +13,33 @@
 
 		<section class="wrap row gutter">
 			<div class="list-header">
-				<h4>List Of People</h4>
-				<button class="show-hide" onclick="showHide( 'people' )"></button>
-			</div>
-			<ul class="m-t tri-columns" id="people"></ul>
-		</section>
-
-		<!-- <section class="wrap row gutter">
-			<div class="list-header">
 				<h4>Dodge Ball Players</h4>
-				<button class="show-hide" onclick="showHide(players)"></button>
+				<button class="auto-left m-r" onclick="getPlayers( arrOfPeople )">Get Players</button>
+				<button class="show-hide" onclick="showHide( 'dodgeballPlayers' )"></button>
 			</div>
-			<button onclick="listPeopleChoices()">List People</button>
-			<ul class="m-t" id="players"></ul>
-		</section> -->
+			<ul id="dodgeballPlayers" class="m-t tri-columns"></ul>
+		</section>
 
 		<section class="wrap row gutter">
 			<div class="list-header">
-				<h4>Red Team</h4>
+				<h4 id="redTeamName">Red Team</h4><h6><sub>Red Team</sub></h6>
+				<button class="auto-left m-r" onclick="changeTeamName( redTeam )">Change Name</button>
 				<button class="show-hide" onclick="showHide( 'redTeam' )"></button>
 			</div>
-			<ul class="m-t tri-columns" id="redTeam"></ul>
+			<ul id="redTeam" class="m-t tri-columns team-list"></ul>
 		</section>
 
 		<section class="wrap row gutter">
 			<div class="list-header">
-				<h4>Blue Team</h4>
+				<h4 id="blueTeamName">Blue Team</h4><h6><sub>Blue Team</sub></h6>
+				<button class="auto-left m-r" onclick="changeTeamName( blueTeam )">Change Name</button>
 				<button class="show-hide" onclick="showHide( 'blueTeam' )"></button>
 			</div>
-			<ul class="m-t tri-columns" id="blueTeam"></ul>
+			<ul id="blueTeam" class="m-t tri-columns team-list"></ul>
 		</section>
 
+		<script src="./showHide.js"></script>
+		<script src="./randomPeople.js"></script>
 		<script src="./script.js"></script>
 	</body>
 
