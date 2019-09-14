@@ -42,7 +42,7 @@ app.get("/users/:usersId", (req, res) => {
 
 	// res.json(users[0]);
 
-	let user = users.filter( e => e._id == req.params.usersId )[0];
+	let user = users.find( e => e._id == req.params.usersId );
 
 	res.json( user );
 
@@ -53,7 +53,7 @@ app.put("/users/:usersId", (req, res) => {
 	// users[0].name = "Dan the man";
 	// res.json( users[0] );
 
-	let user = users.filter( e => e._id == req.params.usersId )[0];
+	let user = users.find( e => e._id == req.params.usersId );
 
 	user.name = "Dan the man";
 	res.json( user );
@@ -62,7 +62,7 @@ app.put("/users/:usersId", (req, res) => {
 
 app.delete("/users/:usersId", (req, res) => {
 
-	let user = users.filter( e => e._id == req.params.usersId )[0];
+	let user = users.find( e => e._id == req.params.usersId );
 
 	user.isActive = false;
 	res.send( `Deleted: ${user.name}` );
