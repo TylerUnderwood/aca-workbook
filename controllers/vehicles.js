@@ -13,7 +13,7 @@ const show = ( id )=>
 
 const create = ( newVehicle )=>
 {
-	newVehicle._id = vehicles[ vehicles.length ]._id;
+	newVehicle._id = vehicles[ vehicles.length - 1 ]._id + 1;
 	vehicles.push( newVehicle );
 	res.json( newVehicle );
 }
