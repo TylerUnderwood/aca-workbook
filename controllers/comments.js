@@ -13,7 +13,7 @@ const show = ( id )=>
 
 const create = ( newComment )=>
 {
-	newComment._id = comments[ comments.length - 1 ]._id + 1;
+	newComment._id = comments.length;
 	comments.push( newComment );
 	res.json( newComment );
 }

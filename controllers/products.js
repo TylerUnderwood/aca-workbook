@@ -13,7 +13,7 @@ const show = ( id )=>
 
 const create = ( newProduct )=>
 {
-	newProduct._id = products[ products.length - 1 ]._id + 1;
+	newProduct._id = products.length;
 	products.push( newProduct );
 	res.json( newProduct );
 }

@@ -13,7 +13,7 @@ const show = ( id )=>
 
 const create = ( newContact )=>
 {
-	newContact._id = contacts[ contacts.length - 1 ]._id + 1;
+	newContact._id = contacts.length;
 	contacts.push( newContact );
 	res.json( newContact );
 }
