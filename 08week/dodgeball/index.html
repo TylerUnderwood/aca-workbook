@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+
+		<section class="wrap row gutter">
+			<div class="list-header">
+				<h4>Dodge Ball Players</h4>
+				<button class="auto-left m-r" onclick="getPlayers( arrOfPeople )">Get Players</button>
+				<button class="show-hide" onclick="showHide( 'dodgeballPlayers' )"></button>
+			</div>
+			<ul id="dodgeballPlayers" class="m-t tri-columns"></ul>
+		</section>
+
+		<section class="wrap row gutter">
+			<div class="list-header">
+				<h4 id="redTeamName">Red Team</h4><h6><sub>Red Team</sub></h6>
+				<button class="auto-left m-r" onclick="changeTeamName( redTeam )">Change Name</button>
+				<button class="show-hide" onclick="showHide( 'redTeam' )"></button>
+			</div>
+			<ul id="redTeam" class="m-t tri-columns team-list"></ul>
+		</section>
+
+		<section class="wrap row gutter">
+			<div class="list-header">
+				<h4 id="blueTeamName">Blue Team</h4><h6><sub>Blue Team</sub></h6>
+				<button class="auto-left m-r" onclick="changeTeamName( blueTeam )">Change Name</button>
+				<button class="show-hide" onclick="showHide( 'blueTeam' )"></button>
+			</div>
+			<ul id="blueTeam" class="m-t tri-columns team-list"></ul>
+		</section>
+
+		<script src="./showHide.js"></script>
+		<script src="./randomPeople.js"></script>
+		<script src="./script.js"></script>
+	</body>
+
+</html>
