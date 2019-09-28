@@ -1,23 +1,39 @@
 const users = require('../data/users');
 
-const listUsers = ( )=>
+const listUsers = ( req, res )=>
 {
-	return users
+	res.json( users );
 }
 
-const showUser = ( id )=>
+const showUser = ( req, res )=>
 {
-	let user = users.find( obj => obj._id == id );
-	return user;
+	let user = users.find( obj => obj.id === parseInt(req.params.id) );
+	res.json( user );
 }
 
-const createUser = ( newUser )=>
+const newUser = require('../data/sampleUser');
+
+const createUser = ( req, res )=>
 {
-	newUser._id = users.length;
+	newUser.id = users.length + 1;
 	users.push( newUser );
 	res.json( newUser );
 }
 
-module.exports = {
-	listUsers, showUser, createUser,
+const updateUser = ( req, res )=>
+{
+	let user = users.find( obj => obj.id === parseInt(req.params.id) );
+	user.id = 42;
+	res.json( user );
+}
+
+const removeUser = ( req, res )=>
+{
+	let user = users.find( obj => obj.id === parseInt(req.params.id) );
+	user.isActive = false;
+	res.send( 'deleted' );
+}
+
+module.exports = { 
+	listUsers, showUser, createUser, updateUser, removeUser
 }
