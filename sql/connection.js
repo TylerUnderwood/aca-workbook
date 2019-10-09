@@ -5,13 +5,13 @@ class Connection {
     if (!this.pool) {
       console.log('creating mysql connection...')
 
-      const config = {
-        connectionLimit: 100,
-        host: 'localhost',
-        user: 'root',
-        password: 'password',
-        database: 'admin'
-      }
+		const config = {
+			connectionLimit: 100,
+			host: '35.193.170.59',
+			user: 'root',
+			password: 'krHmxur1pfdGqLs8',
+			database: 'admin'
+		}
 
       if (process.env.NODE_ENV === 'production' && process.env.CLOUD_INSTANCE) {
         console.log(`connect socket: ${process.env.CLOUD_INSTANCE}`)
