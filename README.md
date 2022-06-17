@@ -66,7 +66,7 @@ Again we will need to figure out what goes in the brackets
 
 The route is going to look like this: http://localhost:4001/users/234
 
-Which is similar to the GET about but this time it is a PUT. We will need to use Postman again to make this work. 
+Which is similar to the GET route but this time it is a PUT. We will need to use Postman again to make this work. 
 
 The goal of this route is to again send a body and this time change the first_name and last_name fields for the row that matches that id. The body for this request will remain the same as last time: 
 
@@ -86,6 +86,11 @@ This route will look like this: http://localhost:4001/users/bogus
 But it will be using the DELETE protocol so again we will need to use Postman to achieve this.
 
 Write a SQL statement to DELETE FROM users WHERE first_name = req param first_name
+
+### Create a full Query
+
+- In your `getAllUsers` return all fields of all users including the fields of `usersContact` & `usersAddress`
+- In your `createUser` be sure that a complete user is created inluding all fields in `usersContact` & `usersAddress`
 
 ## Summary
 
