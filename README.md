@@ -10,13 +10,13 @@ You should already have MySQL installed from last week but if you don't, please 
 
 We need to alter a setting in our cloud database in order to import the dataset that we need. This setting has to do with "triggers" which we have not learned about directly but that you will look for more practice with later. 
 
-1. Navigate to cloud.google.com and make sure you are logged in. 
+1. Navigate to cloud.google.com and make sure you are logged in
 
 2. Navigate to your SQL instance (Cloud SQL)
 
 3. Under the "configuration" tab on the right side of your screen, select "edit configuration"
 
-4. Under "Enable auto backups" DESELECT "enable binary logging"
+4. Under "Enable auto backups" DESELECT "Enable Point-in-Time Recovery"/"*enable binary logging*"
 
 5. Save and restart the instance
 
@@ -38,11 +38,11 @@ We are going to use a sample schema given to use by MySQL.
 
 5. Pull up MySQL Workbench so that we can work with a familiar interface
 
-6. You should see an "sakila" database on the left hand side
+6. You should see a "sakila" database on the left hand side
 
 7. Double-click that database
 
-8. Open a new query and run `select * from actors;`
+8. Open a new query and run `select * from actor;`
 
 9. Did you see any data? If not that's ok. The schema is more important here
 
@@ -56,7 +56,7 @@ We are going to use a sample schema given to use by MySQL.
 
 3. Make sure your connection information is correct and then click "continue"
 
-4. Under "Select the schemas you want to include:" chose "sakila"
+4. Under "Select the schemas you want to include:" choose "sakila"
 
 5. DESELECT everything except "Import MySQL Table Objects"
 
