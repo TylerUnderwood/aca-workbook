@@ -35,7 +35,7 @@ We will create five routes. The data for these routes is provided in the `data` 
   * Update one user matching the path param (id). You may again use the sampleUser code as your "body" for this request
 
 * DELETE /users/:id
-  * Delete one user by it's id
+  * Delete one user by its id
 
 _You may chose to alter these routes so they appear as ('/', '/:id') in your users file and then prefix them all with '/users' when we import them into index.. but you are not required to do so_
 
