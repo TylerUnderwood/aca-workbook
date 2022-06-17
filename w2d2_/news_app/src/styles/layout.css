@@ -1,0 +1,64 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Layout 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.wrapper {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: var(--wrapper);
+}
+
+/* vertical spacing with margin */
+
+.frame {
+	margin-top: var(--x_space);
+	margin-bottom: var(--x_space);
+}
+.frame-top {
+	margin-top: var(--x_space);
+}
+.frame-bottom {
+	margin-bottom: var(--x_space);
+}
+
+/* horizontal spacing with margin */
+
+.spacer {
+	margin-right: var(--y_space);
+	margin-left: var(--y_space);
+}
+.spacer-right {
+	margin-right: var(--y_space);
+}
+.spacer-left {
+	margin-left: var(--y_space);
+}
+
+/* vertical spacing with padding */
+
+.trim {
+	padding-top: var(--x_space);
+	padding-bottom: var(--x_space);
+}
+.trim-top {
+	padding-top: var(--x_space);
+}
+.trim-bottom {
+	padding-bottom: var(--x_space);
+}
+
+/* horizontal spacing with padding */
+
+.gutter {
+	padding-right: var(--y_space);
+	padding-left: var(--y_space);
+}
+.gutter-right {
+	padding-right: var(--y_space);
+}
+.gutter-left {
+	padding-left: var(--y_space);
+}

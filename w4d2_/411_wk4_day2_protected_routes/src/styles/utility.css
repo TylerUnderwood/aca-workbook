@@ -1,0 +1,147 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Utility
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* ===== WIDTHS ===== */
+
+.w-full { width: 100vw; }
+
+.w-100 { width: 100%; }
+
+.w-87 { width: 87.5%; }
+
+.w-75 { width: 75%; }
+
+.w-66 { width: 66.666666%; }
+
+.w-62 { width: 62.5%; }
+
+.w-50 { width: 50%; }
+
+.w-37 { width: 37.5%; }
+
+.w-33 { width: 33.333333%; }
+
+.w-25 { width: 25%; }
+
+.w-12 { width: 12.5%; }
+
+/* ===== MAX WIDTHS ===== */
+
+[class*=max-w] {
+	width: 100%;
+}
+
+.max-w { max-width: 1600px; }
+
+.max-w-sm { max-width: 36rem; }
+
+.max-w-md { max-width: 54rem; }
+
+.max-w-lg { max-width: 64rem; }
+
+/* ===== ALIGNMENT ===== */
+
+.align-center {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.align-left,
+.float-left {
+	float: left;
+}
+
+.align-right,
+.float-right {
+	float: right;
+}
+
+.align-full,
+.force-full {
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	width: 100vw;
+	max-width: unset;
+}
+
+/* ===== OTHER ===== */
+.cf::after,
+.clearfix::after {
+	display: block;
+	width: 100%;
+	height: 0;
+	float: none;
+	clear: both;
+	content: "";
+}
+
+/* ===== WHITESPACE ===== */
+/*
+|
+| Syntax
+| [rule]-[direction]-[size] 
+|
+| p = padding
+| m = margin
+|
+| t = top
+| r = right
+| b = bottom
+| l = left
+|
+*/
+
+/* === padding === */
+
+/* add */
+.p { padding: var(--space); }
+
+.p-t { padding-top: var(--space); }
+
+.p-r { padding-right: var(--space); }
+
+.p-b { padding-bottom: var(--space); }
+
+.p-l { padding-left: var(--space); }
+
+/* remove */
+.p-0 { padding: 0; }
+
+.p-t-0 { padding-top: 0; }
+
+.p-r-0 { padding-right: 0; }
+
+.p-b-0 { padding-bottom: 0; }
+
+.p-l-0 { padding-left: 0; }
+
+/* === margin === */
+
+/* add */
+.m { padding: var(--space); }
+
+.m-t { margin-top: var(--space); }
+
+.m-r { margin-right: var(--space); }
+
+.m-b { margin-bottom: var(--space); }
+
+.m-l { margin-left: var(--space); }
+
+/* remove */
+.m-0 { margin: 0; }
+
+.m-t-0 { margin-top: 0; }
+
+.m-r-0 { margin-right: 0; }
+
+.m-b-0 { margin-bottom: 0; }
+
+.m-l-0 { margin-left: 0; }

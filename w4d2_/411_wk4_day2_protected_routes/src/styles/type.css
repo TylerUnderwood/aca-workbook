@@ -1,0 +1,174 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Typography 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+/* main headings */
+h1, h2, h3 {
+	color: var(--heading_color);
+}
+h1 { font-size: 3.6rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.4rem; }
+
+/* sub headings */
+h4, h5, h6 {
+	font-size: var(--font_size_lg);
+}
+h4 { color: var(--heading_color); }
+h5 { color: var(--heading_color_alt); }
+h6 { color: var(--font_color_light); }
+
+/* all headings */
+h1, h2, h3, h4, h5, h6 {
+	margin: 1em 0 0;
+	line-height: 1.2;
+	font-weight: normal;
+	font-family: var(--font_family);
+}
+
+/* first heading in an element */
+h1:first-child, 
+h2:first-child, 
+h3:first-child, 
+h4:first-child, 
+h5:first-child, 
+h6:first-child {
+	margin-top: -0.24em;
+}
+
+/* last heading in an element */
+h1:last-child, 
+h2:last-child, 
+h3:last-child, 
+h4:last-child, 
+h5:last-child, 
+h6:last-child {
+	margin-bottom: -0.2em;
+}
+
+/* heading after another heading */
+h1 + h1, h1 + h2, h1 + h3, h1 + h4, h1 + h5, h1 + h6, 
+h2 + h1, h2 + h2, h2 + h3, h2 + h4, h2 + h5, h2 + h6, 
+h3 + h1, h3 + h2, h3 + h3, h3 + h4, h3 + h5, h3 + h6, 
+h4 + h1, h4 + h2, h4 + h3, h4 + h4, h4 + h5, h4 + h6, 
+h5 + h1, h5 + h2, h5 + h3, h5 + h4, h5 + h5, h5 + h6, 
+h6 + h1, h6 + h2, h6 + h3, h6 + h4, h6 + h5, h6 + h6 {
+	margin-top: 0.5rem;
+	padding-top: 0;
+}
+
+/* paragraph after a heading */
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+	margin-top: 1.0rem;
+}
+
+/* horizontal rule */
+hr {
+	clear: both;
+	margin: var(--space) 0;
+	border: unset;
+	border-top: 1px solid currentColor;
+	border-bottom: 1px solid currentColor;
+	color: var(--font_color_light);
+}
+hr + * {
+	margin-top: 0;
+}
+
+/* paragraph */
+p {
+	margin: var(--space) 0 0;
+	max-width: var(--text_wrapper);
+	line-height: 1.6;
+	font-size: var(--font_size);
+	-webkit-hyphens: none;
+		-ms-hyphens: none;
+			hyphens: none;
+}
+p:first-child {
+	margin-top: 0;
+}
+p:last-child {
+	margin-bottom: 0;
+}
+
+/* list items */
+ul, ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	line-height: 1.4;
+	font-size: var(--font_size);
+}
+li:first-child {
+	margin-top: 0;
+}
+li:last-child {
+	margin-bottom: 0;
+}
+
+/* blockquote */
+blockquote {
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	font-size: var(--font_size_lg);
+}
+
+cite, label, small {
+	font-size: var(--font_size_sm);
+}
+
+code {
+	border-radius: 2px;
+	background: #eeeeee;
+	padding: 4px 8px;
+	line-height: 1.2;
+	font-size: inherit;
+	color: #333333;
+}
+
+sub, sup {
+	position: relative;
+	vertical-align: baseline;
+	line-height: 0;
+	font-size: 75%;
+}
+sup {
+	top: -0.25em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+address {
+	font-style: normal;
+}
+
+/* anchor tags */
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+a:hover, a:focus {
+	outline: none;
+	color: inherit;
+}
+
+a:not([class]),
+.link {
+	color: var(--link_color);
+	transition: color 200ms ease-in-out;
+}
+a:not([class]):hover,
+a:not([class]):focus,
+.link:hover,
+.link:focus {
+	color: var(--link_hover);
+}
