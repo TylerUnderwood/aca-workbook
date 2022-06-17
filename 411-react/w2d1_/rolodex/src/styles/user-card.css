@@ -1,0 +1,17 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| User Card
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.user-card {
+	display: flex;
+}
+
+.user-card h4 {
+	display: inline-block;
+}
+
+.user-card .profile-picture {
+	border-radius: 0.2rem;
+}

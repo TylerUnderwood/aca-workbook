@@ -1,0 +1,201 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| COMPONENTS: Modal 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+body.modal-open,
+body.modal-opening {
+	overflow: hidden;
+}
+
+@-webkit-keyframes modal_pop_in {
+	from {
+		transform: scale(1.05);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+		-webkit-filter: blur(0);
+				filter: blur(0);
+	}
+}
+
+@keyframes modal_pop_in {
+	from {
+		transform: scale(1.05);
+		opacity: 0;
+	}
+	to {
+		transform: none;
+		opacity: 1;
+		-webkit-filter: blur(0);
+				filter: blur(0);
+	}
+}
+@-webkit-keyframes modal_pop_out {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0.95);
+		opacity: 0;
+		-webkit-filter: blur(0);
+				filter: blur(0);
+	}
+}
+@keyframes modal_pop_out {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0.95);
+		opacity: 0;
+		-webkit-filter: blur(0);
+				filter: blur(0);
+	}
+}
+@-webkit-keyframes modal_fade_in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes modal_fade_in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes modal_fade_out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+@keyframes modal_fade_out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+.modal-wrapper {
+	display: block;
+	position: fixed;
+	z-index: 990;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: auto;
+	padding: 2rem 2rem 0 2rem;
+	text-align: center;
+}
+.modal-wrapper::after {
+	display: inline-block;
+	height: 100%;
+	content: "";
+}
+.modal-wrapper.modal-closed {
+	visibility: hidden;
+}
+.modal-wrapper.modal-opening {
+	-webkit-animation: modal_fade_in 320ms forwards ease-in-out;
+			animation: modal_fade_in 320ms forwards ease-in-out;
+}
+.modal-wrapper.modal-opened {
+	visibility: visible;
+}
+.modal-wrapper.modal-closing {
+	-webkit-animation: modal_fade_out 320ms forwards ease-in-out;
+			animation: modal_fade_out 320ms forwards ease-in-out;
+}
+
+.modal-overlay {
+	display: block;
+	position: absolute;
+	z-index: 991;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	content: "";
+	cursor: pointer;
+}
+
+.modal,
+.modal-wrapper::after {
+	vertical-align: middle;
+}
+
+.modal {
+	display: inline-flex;
+	position: relative;
+	z-index: 998;
+	margin: 2rem 0;
+	max-width: 100%;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.2);
+	background-color: #ffffff;
+	cursor: default;
+}
+.modal-closed > .modal {
+	visibility: hidden;
+}
+.modal-opening > .modal {
+	-webkit-animation: modal_pop_in 320ms forwards ease-in-out;
+			animation: modal_pop_in 320ms forwards ease-in-out;
+}
+.modal-opened > .modal {
+	visibility: visible;
+}
+.modal-closing > .modal {
+	-webkit-animation: modal_pop_out 320ms forwards ease-in-out;
+			animation: modal_pop_out 320ms forwards ease-in-out;
+}
+
+.modal-close-button {
+	display: block;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	left: unset;
+	transform: translate(60%, -60%);
+	border: 0;
+	background: none;
+	padding: 0;
+	cursor: pointer;
+}
+.modal-close-button::after {
+	display: block;
+	box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	background-color: #ffffff;
+	line-height: 1.4em;
+	font-size: 24px;
+	color: #c0c0c0;
+	content: "\D7";
+	transition: color 200ms ease-in-out, background 200ms ease-in-out;
+}
+.modal-close-button:hover::after,
+.modal-close-button:focus::after {
+	background-color: #f7e388;
+	color: #555555;
+}
+
+.modal-inner {
+	display: block;
+}

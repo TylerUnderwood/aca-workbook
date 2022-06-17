@@ -1,0 +1,87 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Buttons 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+|
+| The button or submit should by default have button styles,
+| but once a class is put on them, they should be wiped of styles so you dont have to backpedal.
+|
+| If you want to put a class on the button but keep the default styles,
+| just add the button class to the classes you want.
+|
+*/
+
+button {
+	display: inline-block;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	color: white;
+	cursor: pointer;
+}
+
+.btn,
+.button,
+button:not([class]),
+input[type=submit]:not([class]) {
+	display: inline-block;
+	flex-shrink: 0;
+	min-width: 8rem;
+	border: 2px solid var(--link_color);
+	border-radius: none;
+	background-color: var(--link_color);
+	padding: 0.5rem 1.4rem;
+	letter-spacing: 2px;
+	line-height: 1;
+	font-family: var(--font_family);
+	font-size: 0.8rem;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	transition: all 300ms ease-in-out;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
+	cursor: pointer;
+}
+
+.btn:hover, 
+.btn:focus,
+.button:hover, 
+.button:focus,
+button:not([class]):hover, 
+button:not([class]):focus,
+input[type=submit]:not([class]):hover, 
+input[type=submit]:not([class]):focus {
+	outline: none;
+	border-color: var(--link_hover);
+	background-color: var(--link_hover);
+	color: white;
+}
+
+.btn[disabled],
+.button[disabled],
+button:not([class])[disabled],
+input[type=submit]:not([class])[disabled] {
+	opacity: 0.8;
+	cursor: not-allowed;
+}
+
+.btn[disabled]:hover, 
+.btn[disabled]:focus,
+.button[disabled]:hover, 
+.button[disabled]:focus,
+button:not([class])[disabled]:hover, 
+button:not([class])[disabled]:focus,
+input[type=submit]:not([class])[disabled]:hover, 
+input[type=submit]:not([class])[disabled]:focus {
+	outline: none;
+	border-color: var(--link_color);
+	background-color: var(--link_color);
+	color: white;
+}

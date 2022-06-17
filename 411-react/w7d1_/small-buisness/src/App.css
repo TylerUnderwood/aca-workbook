@@ -1,0 +1,79 @@
+.login-form {
+	display: flex;
+	flex-direction: column;
+	margin: 50px auto;
+	width: 50%;
+}
+
+.login-button {
+	margin-top: 25px !important;
+}
+
+.card-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.card {
+	width: 20vw;
+	margin: 25px;
+}
+
+/* a {
+	text-decoration: none;
+	color: inherit;
+} */
+
+ul {
+	padding-inline-start: 20px;
+}
+
+.text-gray {
+	color: gray
+}
+
+.text-red {
+	color: red;
+}
+
+.nav-logo a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.nav-list {
+	list-style: none;
+	display: flex;
+}
+
+.nav-list-item {
+	margin: auto 20px;
+}
+
+.nav-list-item a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.nav-list-item:hover {
+	cursor: pointer;
+}
+
+.logged-in-bar {
+	background-color: gainsboro;
+	padding: 0.2rem 1rem;
+	color: #333;
+}
+
+.flex {
+	display: flex;
+}
+
+.pad {
+	padding: 3rem;
+}
+
+.w-50 {
+	width: 50%;
+}
