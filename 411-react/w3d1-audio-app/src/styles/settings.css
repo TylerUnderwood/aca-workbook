@@ -1,0 +1,29 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Settings 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
+
+:root {
+	--wrapper: 48rem;
+	--text_wrapper: 36rem;
+	
+	--space: 1.6rem;
+	--y_space: 2.4rem;
+	--x_space: 3.2rem;
+}
+
+:root {
+	--font_family: 'Roboto', sans-serif;
+	--font_size_lg: 1.2rem;
+	--font_size: 1.0rem;
+	--font_size_sm: 0.8rem;
+	--font_color: #333;
+	--font_color_light: #B8C8CA;
+	--heading_color: #201E31;
+	--heading_color_alt: #637BA9;
+	--link_color: #FF7F6C;
+	--link_hover: #ff381a;
+}

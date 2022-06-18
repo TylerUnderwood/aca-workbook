@@ -1,0 +1,45 @@
+/*
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+| Single Form 
+|––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+form.single-form {
+	display: flex;
+	max-width: var(--text_wrapper);
+}
+
+form.single-form input,
+form.single-form button {
+	display: block;
+	margin: 0;
+	height: 40px;
+	min-height: 40px;
+	line-height: 1;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+form.single-form button {
+	padding-left: 1.4em;
+	padding-right: 1.4em;
+}
+
+form.single-form input {
+	flex: 1;
+}
+
+@media (max-width: 479px) {
+	form.single-form {
+		flex-direction: column;
+	}
+	form.single-form button {
+		margin-top: 0.8rem;
+	}
+}
+
+@media (min-width: 480px) {
+	form.single-form button {
+		margin-left: 0.8rem;
+	}
+}
