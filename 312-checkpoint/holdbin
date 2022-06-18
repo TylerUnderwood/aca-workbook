@@ -1,0 +1,10 @@
+
+
+
+
+let isValidUser = users.some( users => users.id === parseInt( req.params.id ) );
+if ( isValidUser === true ) {
+		// the code
+} else {
+    res.status(400).json({msg: `User ${req.params.id} does not exist.`})
+}
